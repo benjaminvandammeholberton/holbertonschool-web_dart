@@ -10,6 +10,6 @@ class Password{
 
   @override
   String toString(){
-    return "Your password is: ${this.password}";
+    return "Your Password is: ${this.password}";
   }
 }
