@@ -1,15 +1,13 @@
-class Password{
-  var password;
+class Password {
+  String password = '';
 
-  bool isValid() {
-  
-  final RegExp regex = RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,16}$');
-  return regex.hasMatch(this.password);
-
+  bool isValid(){
+    RegExp regexp = RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,16}$');
+    return regexp.hasMatch(password);
   }
 
   @override
   String toString(){
-    return "Your Password is: ${this.password}";
+    return 'Your Password is: $password';
   }
 }
