@@ -1,6 +1,7 @@
 class User {
-  var name;
+  String name = '';
+
   String showName(){
-    return 'Hello $name';
+    return "Hello $name";
   }
 }
