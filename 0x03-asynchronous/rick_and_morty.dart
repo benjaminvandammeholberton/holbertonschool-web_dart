@@ -1,16 +1,14 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 Future<void> printRmCharacters() async {
-  try {
-    Uri url = Uri.parse("https://rickandmortyapi.com/api/character");
-    var response = await http.get(url);
-    var data = json.decode(response.body);
-    var characters = data['results'];
-    for (final ch in characters){
-      print(ch['name']);
+    try {
+        final res = await http.get(Uri.parse("https://rickandmortyapi.com/api/character"));
+        final characters = jsonDecode(res.body)["results"];
+        for (final character in characters) {
+            print(character["name"]);
+        }
+    } catch (error) {
+        print("error caught: $error");
     }
-  } catch(err){
-    throw 'error caught: $err';
-  }
 }
